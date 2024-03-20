@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 app.use(cookieParser());
-connectToMongodb("mongodb://127.0.0.1:27017/url-sortner").then(() => console.log("Mongodb is connected"))
+connectToMongodb("").then(() => console.log("Mongodb is connected"))
 
 app.set("view engine", "ejs");
 app.set("views", path.resolve("./views"))
