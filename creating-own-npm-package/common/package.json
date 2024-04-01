@@ -1,0 +1,9 @@
+{
+  "name": "@pramod-pawar/commonn",
+  "version": "1.0.2",
+  "description": "Convert this from JS to typescript.",
+  "main": "dist/index.js",
+  "dependencies": {
+    "zod": "^3.22.4"
+  }
+}

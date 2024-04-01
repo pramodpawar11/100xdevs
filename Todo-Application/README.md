@@ -1,6 +1,10 @@
  Description
+<<<<<<< HEAD
 
- This repository contains the source code for a simple todo list management system built using Express.js. The application allows users to create, update, and delete todo lists, with user authentication integrated using JSON Web Tokens (JWT). MongoDB is used as the database to store todo lists and user information. Additionally, the application includes LinkedIn integration for user authentication, allowing users to log in using their LinkedIn credentials.
+ This repository contains the source code for a simple todo list management system built using Express.js. The application allows users to create, update, and delete todo lists, with user authentication integrated using JSON Web Tokens (JWT). MongoDB is used as the database to store todo lists and user information
+=======
+ This repository contains the source code for a simple todo list management system built using Express.js. The application allows users to create, update, and delete todo lists, with user authentication integrated using JSON Web Tokens (JWT). MongoDB is used as the database to store todo lists and user information.
+>>>>>>> 1efb985ef4eb3f0cc7c24ce9387e6c6485beb27a
 
   Technologies Used
 * Express.js: Web framework for Node.js
