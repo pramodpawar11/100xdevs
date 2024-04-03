@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./partials/head")  %>
+    <title><%= showBlogs.title %></title>
+    <style>
+        /* Style the container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Style the blog title */
+        .card-title {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        /* Style the blog cover image */
+        .card-img-top {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        /* Style the blog body */
+        .card-body {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        /* Style the blog author */
+        .author {
+            font-style: italic;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* Style the navigation */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: #fff;
+        }
+
+        /* Style the read more button if needed */
+        .read-more-btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .read-more-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include("./partials/nav") %>
+
+    <div class="container mt-4">
+        <div class="row">
+            <h2 class="card-title text-center mb-5 mt-5"><%= showBlogs.title %></h2>
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <img src="<%= showBlogs.coverImg %>" class="card-img-top" alt="Blog Cover Image">
+
+                </div>
+                <div class="card-body mt-5">
+                    <p class="card-text"><%= showBlogs.body %></p>
+                </div>
+                <div class="container mt-4">
+                    <p class="author"><%= showBlogs.createdBy.fullName %></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include("./partials/script")  %>
+
+</body>
+
+</html>

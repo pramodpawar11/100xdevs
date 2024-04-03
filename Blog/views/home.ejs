@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./partials/head")  %>
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include("./partials/nav") %>
+    <div class="row mt-5 mr-5">
+        <% blogs.forEach(blog => { %>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="<%= blog.coverImg %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= blog.title %></h5>
+                        <p class="card-text"><%= blog.body.substring(0, 100) %>...</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/blog/<%= blog._id %>" class="btn btn-primary btn-sm">Read More</a>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+    
+    </div>
+    
+    
+    <%- include("./partials/script")  %>
+   
+</body>
+
+</html>

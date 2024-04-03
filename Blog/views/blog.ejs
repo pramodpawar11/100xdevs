@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./partials/head") %>
+        <title>Document</title>
+        <style>
+            body {
+                background-color: #f8f9fa;
+            }
+
+            .container {
+                max-width: 600px;
+                margin-top: 50px;
+                background-color: #fff;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .form-group label {
+                font-weight: bold;
+            }
+
+            .btn-primary {
+                background-color: #007bff;
+                border-color: #007bff;
+            }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+                border-color: #0056b3;
+            }
+        </style>
+</head>
+
+<body>
+    <%- include("./partials/nav") %>
+        <div class="container">
+            <h2 class="mb-4">Create a Post</h2>
+            <form action="blog/add-blog" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title">
+                </div>
+                <div class="form-group">
+                    <label for="body">Body</label>
+                    <textarea class="form-control" id="body" name="body" rows="5" placeholder="Enter body"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="coverImage">Cover Image</label>
+                    <input type="file" name="coverImage" class="form-control-file" id="coverImage">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+        <%- include("./partials/script") %>
+
+</body>
+
+</html>
