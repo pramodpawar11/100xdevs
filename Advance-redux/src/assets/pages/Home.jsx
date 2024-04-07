@@ -3,41 +3,38 @@ import { IoMdHome, IoIosCart } from "react-icons/io";
 import { useDispatch,useSelector } from 'react-redux';
 import { add } from "../store/cartSlice";
 import { Link } from "react-router-dom";
+import {fetchProduct} from "../store/productSlice"
 
 
 const Home = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  
   const dispatch = useDispatch();
   const storeLength = useSelector((store)=>store.cart);
-
+  const { data, status } = useSelector((store) => store.product); 
+  const products = data.products
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch("https://dummyjson.com/products");
-        if (!res.ok) {
-          throw new Error("Failed to fetch data");
-        }
-        const json = await res.json();
-        setProducts(json.products);
-        setLoading(false);
-      } catch (error) {
-        setError(error.message);
-        setLoading(false);
-      }
-    };
-    fetchData();
+    dispatch(fetchProduct());
+    // const fetchData = async () => {
+    //   try {
+    //     const res = await fetch("https://dummyjson.com/products");
+    //     if (!res.ok) {
+    //       throw new Error("Failed to fetch data");
+    //     }
+    //     const json = await res.json();
+    //     setProducts(json.products);
+    //     setLoading(false);
+    //   } catch (error) {
+    //     setError(error.message);
+    //     setLoading(false);
+    //   }
+    // };
+    // fetchData();
   }, []);
 
   const addToCart = (prod)=>{
     dispatch(add(prod));
   }
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
-  if (!Array.isArray(products)) return <div>No products found</div>;
-
+  if(!products) return <div>Loading.........</div>
   return (
     <div>
       <nav className="bg-gray-800 shadow-lg">
