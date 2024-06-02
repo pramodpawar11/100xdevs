@@ -1,8 +1,8 @@
 const socket = io();
 let name = "pramod"
-// do{
-//     name = prompt("Enter the name")
-// }while(!name);
+do{
+    name = prompt("Enter the name")
+}while(!name);
 
 const textarea = document.querySelector("#text-area");
 const messageArea = document.querySelector(".message__area");

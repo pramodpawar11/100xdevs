@@ -10,7 +10,7 @@ const Blog = require("./models/blog.js");
 var cookieParser = require("cookie-parser");
 const { checkAuthentication } = require("./middlewares/authentications.js");
 
-connectToDb("").then(() => {
+connectToDb("mongodb://127.0.0.1:27017/Blog").then(() => {
   console.log("Connected to Database");
 });
 
